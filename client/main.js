@@ -1,22 +1,30 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
-import './main.html';
+// import '../layouts/HomeLayout.html'
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+FlowRouter.route('/', {
+    name: 'home',
+    action() {
+        // Render a template using Blaze
+        console.log('HOME PAGE');
+        // this.render('../layouts/MainLayout.html');
+        this.render('../client/main.html');
+
+        // Can be used with BlazeLayout,
+        // and ReactLayout for React-based apps
+    }
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
+// Create 404 route (catch-all)
+FlowRouter.route('*', {
+    action() {
+        // Show 404 error page using Blaze
+        console.log('NOT FOUND')
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+        // this.render('HomeLayout');
+
+        // Can be used with BlazeLayout,
+        // and ReactLayout for React-based apps
+    }
 });
