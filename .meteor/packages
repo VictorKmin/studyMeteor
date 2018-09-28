@@ -24,3 +24,5 @@ ostrio:flow-router-extra
 accounts-ui
 accounts-password
 reactive-dict
+react-meteor-data
+iron:router

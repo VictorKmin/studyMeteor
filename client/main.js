@@ -1,30 +1,43 @@
-import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
-import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+// import {Meteor} from 'meteor/meteor';
+// import {FlowRouter} from 'meteor/ostrio:flow-router-extra';
+// // import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+// import { Blaze } from 'meteor/blaze';
+//
+// // import React from 'react';
+// // import * as BlazeLayout from "react-dom";
+//
+//
+// FlowRouter.route('/', {
+//     name: 'home',
+//     action() {
+//             console.log('HOME PAGE');
+//
+//             //No such layout
+//             // this.render('../layouts/MainLayout.html');
+//             // BlazeLayout.render('../layouts/MainLayout.html');
+//             // BlazeLayout.render(Template.HomeLayout);
+//             return Blaze.render( Template.HomeLayout);
+//     }
+// });
+//
+// FlowRouter.route('*', {
+//     action() {
+//         console.log('NOT FOUND')
+//     }
+// });
 
-// import '../layouts/HomeLayout.html'
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 
-FlowRouter.route('/', {
-    name: 'home',
-    action() {
-        // Render a template using Blaze
-        console.log('HOME PAGE');
-        // this.render('../layouts/MainLayout.html');
-        this.render('../client/main.html');
 
-        // Can be used with BlazeLayout,
-        // and ReactLayout for React-based apps
-    }
-});
+// Router = new Iron.Router;
 
-// Create 404 route (catch-all)
-FlowRouter.route('*', {
-    action() {
-        // Show 404 error page using Blaze
-        console.log('NOT FOUND')
+// Router.route('/', function () {
+//     console.log('HELLO');
+//     this.render('Home');
+// });
 
-        // this.render('HomeLayout');
-
-        // Can be used with BlazeLayout,
-        // and ReactLayout for React-based apps
-    }
+Router.map(function () {
+    console.log('Hello');
+    this.route('Home', { path: '/' });
 });
