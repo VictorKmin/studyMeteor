@@ -12,13 +12,16 @@
             Password: 123456 <br><br>
             User: hello <br>
             Password: hello123 <br><br>
+            User: test <br>
+            Password: test11 <br><br>
         </div>
         <!--
         Якшо юзера залоговано, відображається можливість щось написати і бачити всізаписи з бази
          -->
         {{#if currentUser}}
-            <input type="text" name="textField" id="textField"/>
-            <button>Send</button>
+            <input type="text" name="title" id="title"/>
+            <input type="text" name="description" id="description"/>
+            <button>Create service</button>
             <br><br><br>
         <!-- перебираємо всі пости -->
             {{#each posts}}

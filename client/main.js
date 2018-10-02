@@ -6,27 +6,34 @@ import '../layouts/homePage/HomeLayout.html';
 import '../layouts/homePage/HomeLayout.js';
 import '../layouts/usersPage/usersLayout.html';
 import '../layouts/usersPage/usersLayout.js';
+import '../layouts/404Page/404Layout.html';
+import '../layouts/404Page/404Layout.js';
+import '../layouts/servicesPage/servicesLayout.html';
+import '../layouts/servicesPage/servicesLayout.js';
 import '../layouts/MainLayout.html';
 
 
 FlowRouter.route('/', {
     action() {
-        console.log('HOME PAGE');
         return BlazeLayout.render('HomeLayout');
     }
 });
 
-FlowRouter.route('/authors', {
+FlowRouter.route('/users', {
     action() {
-        console.log('AUTHORS');
-        return BlazeLayout.render('HomeLayout')
+        return BlazeLayout.render('users')
+    }
+});
+
+
+FlowRouter.route('/services', {
+    action() {
+        return BlazeLayout.render('services')
     }
 });
 
 FlowRouter.route('*', {
     action() {
-        console.log('ANOTHER PAGE');
-        return BlazeLayout.render('users');
-
+        return BlazeLayout.render('404');
     }
 });

@@ -1,0 +1,15 @@
+<template name="services">
+    HELLO SERVICE
+
+    {{#each findAllServices}}
+        {{>oneService}}
+    {{/each}}
+</template>
+
+<template name="oneService">
+    <div style="background-color: bisque; border: 2px solid gray">
+        <h2> {{title}} </h2> <br>
+        {{description}}
+        <br><br>
+    </div>
+</template>
