@@ -1,0 +1,11 @@
+<template name="users">
+    ALL ACTIVE USERS <br>
+    TAP TO CHAT <br> <br> <br>
+    {{#each users}}
+        {{> oneUser}}
+    {{/each}}
+</template>
+
+<template name="oneUser">
+    {{username}} <button> Chat with user </button>
+</template>

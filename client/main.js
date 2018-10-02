@@ -1,43 +1,32 @@
-// import {Meteor} from 'meteor/meteor';
-// import {FlowRouter} from 'meteor/ostrio:flow-router-extra';
-// // import { BlazeLayout } from 'meteor/kadira:blaze-layout';
-// import { Blaze } from 'meteor/blaze';
-//
-// // import React from 'react';
-// // import * as BlazeLayout from "react-dom";
-//
-//
-// FlowRouter.route('/', {
-//     name: 'home',
-//     action() {
-//             console.log('HOME PAGE');
-//
-//             //No such layout
-//             // this.render('../layouts/MainLayout.html');
-//             // BlazeLayout.render('../layouts/MainLayout.html');
-//             // BlazeLayout.render(Template.HomeLayout);
-//             return Blaze.render( Template.HomeLayout);
-//     }
-// });
-//
-// FlowRouter.route('*', {
-//     action() {
-//         console.log('NOT FOUND')
-//     }
-// });
+import {FlowRouter} from 'meteor/ostrio:flow-router-extra';
+import {BlazeLayout} from 'meteor/kadira:blaze-layout';
 
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
+import './main.html';
+import '../layouts/homePage/HomeLayout.html';
+import '../layouts/homePage/HomeLayout.js';
+import '../layouts/usersPage/usersLayout.html';
+import '../layouts/usersPage/usersLayout.js';
+import '../layouts/MainLayout.html';
 
 
-// Router = new Iron.Router;
+FlowRouter.route('/', {
+    action() {
+        console.log('HOME PAGE');
+        return BlazeLayout.render('HomeLayout');
+    }
+});
 
-// Router.route('/', function () {
-//     console.log('HELLO');
-//     this.render('Home');
-// });
+FlowRouter.route('/authors', {
+    action() {
+        console.log('AUTHORS');
+        return BlazeLayout.render('HomeLayout')
+    }
+});
 
-Router.map(function () {
-    console.log('Hello');
-    this.route('Home', { path: '/' });
+FlowRouter.route('*', {
+    action() {
+        console.log('ANOTHER PAGE');
+        return BlazeLayout.render('users');
+
+    }
 });
