@@ -7,31 +7,7 @@
         <h1>Home Layout</h1>
 
         <!-- Які юзери зареєстровані -->
-        <div style="text-align: center">
-            User: 123456 <br>
-            Password: 123456 <br><br>
-            User: hello <br>
-            Password: hello123 <br><br>
-            User: test <br>
-            Password: test11 <br><br>
-        </div>
-        <!--
-        Якшо юзера залоговано, відображається можливість щось написати і бачити всізаписи з бази
-         -->
-        {{#if currentUser}}
-            <input type="text" name="title" id="title"/>
-            <input type="text" name="description" id="description"/>
-            <button>Create service</button>
-            <br><br><br>
-        <!-- перебираємо всі пости -->
-            {{#each posts}}
-                {{> post}}
-            {{/each}}
-        {{/if}}
+        <a href="/services"> Services </a> <br>
+        <a href="/users"> Users </a>
     </main>
-</template>
-
-<!-- Темплейт який витягує всі записи з бази -->
-<template name="post">
-    <b> {{text}} </b> <i> write by {{username}} </i> <br>
 </template>

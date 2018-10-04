@@ -1,15 +1,24 @@
 <template name="services">
-    HELLO SERVICE
+    HELLO SERVICE <br><br><br>
+
+    {{#if currentUser}}
+        <input type="text" name="title" id="newServiceTitle" value="TITLE"/>
+        <input type="text" name="description" id="newServiceDescription" value="DESCRIPTION"/>
+        <button id="create">Create service</button>
+        <br><br><br>
+    {{/if}}
 
     {{#each findAllServices}}
-        {{>oneService}}
+        {{>oneService}} <br>
     {{/each}}
 </template>
 
 <template name="oneService">
     <div style="background-color: bisque; border: 2px solid gray">
-        <h2> {{title}} </h2> <br>
-        {{description}}
-        <br><br>
+        <h2 id="title"> {{title}} </h2> <br>
+        <div id="description">
+            {{description}}
+        </div>
+        <button id="delete" style="align-items: center">DELETE</button>
     </div>
 </template>

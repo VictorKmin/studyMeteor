@@ -1,22 +1,36 @@
 import {Mongo} from 'meteor/mongo';
 import {Meteor} from 'meteor/meteor';
-import {check} from 'meteor/check';
 
-export const Posts = new Mongo.Collection('posts');
 export const Services = new Mongo.Collection('services');
 
 // Описуємо всі методи
 Meteor.methods({
     // метод, який вносить в базу записи
-    "insertPost"(text) {
-        // Перевіряю чи це стрінга
-        check(text, String);
-        //Запис в базу Mongo
-        Posts.insert({
-            text,
-            createdAt: new Date(),
-            owner: Meteor.userId(),
-            username: Meteor.user().username
-        });
+    "insertService"({title, description}) {
+        if (title === '' || description === '') {
+            throw new Error('Something field is empty')
+        } else {
+            Services.insert({
+                createdAt: new Date(),
+                owner: Meteor.userId(),
+                username: Meteor.user().username,
+                title,
+                description
+            });
+        }
+    },
+
+    //ServicesUpdate method
+
+    "updateService"({id, description}) {
+        if (description === '') {
+            throw new Error('Something field is empty')
+        } else {
+            Services.update(
+                {_id: id},
+                {description}
+            )
+        }
     }
-});
+})
+;

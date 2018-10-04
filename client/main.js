@@ -12,19 +12,17 @@ import '../layouts/servicesPage/servicesLayout.html';
 import '../layouts/servicesPage/servicesLayout.js';
 import '../layouts/MainLayout.html';
 
-
 FlowRouter.route('/', {
     action() {
         return BlazeLayout.render('HomeLayout');
     }
 });
 
-FlowRouter.route('/users', {
+FlowRouter.route("/users", {
     action() {
         return BlazeLayout.render('users')
     }
 });
-
 
 FlowRouter.route('/services', {
     action() {
