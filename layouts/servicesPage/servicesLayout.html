@@ -7,18 +7,21 @@
         <button id="create">Create service</button>
         <br><br><br>
     {{/if}}
-
     {{#each findAllServices}}
-        {{>oneService}} <br>
+        {{>oneService}}
+        <!--<h6 style="color: darkblue; margin-top: 0px"> TO UPDATE DESCRIPTION CLICK ON TEXT</h6>-->
     {{/each}}
 </template>
 
+
 <template name="oneService">
-    <div style="background-color: bisque; border: 2px solid gray">
-        <h2 id="title"> {{title}} </h2> <br>
+    <div style="background-color: lavender; border: 2px solid gray">
+        <h2 id="title" style="text-align: center"> {{title}} </h2>
         <div id="description">
             {{description}}
         </div>
-        <button id="delete" style="align-items: center">DELETE</button>
+        <br>
+        <button id="delete" style="margin: 10px 10px; background-color: lightskyblue">DELETE</button>
+        <button id="update"> UPDATE</button>
     </div>
 </template>
