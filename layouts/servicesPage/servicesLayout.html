@@ -2,14 +2,14 @@
     HELLO SERVICE <br><br><br>
 
     {{#if currentUser}}
-        <input type="text" name="title" id="newServiceTitle" value="TITLE"/>
-        <input type="text" name="description" id="newServiceDescription" value="DESCRIPTION"/>
+        <input type="text" name="title" id="newServiceTitle" placeholder="TITLE"/>
+        <input type="text" name="description" id="newServiceDescription" placeholder="DESCRIPTION"/>
         <button id="create">Create service</button>
         <br><br><br>
     {{/if}}
     {{#each findAllServices}}
         {{>oneService}}
-        <!--<h6 style="color: darkblue; margin-top: 0px"> TO UPDATE DESCRIPTION CLICK ON TEXT</h6>-->
+        <br>
     {{/each}}
 </template>
 
